@@ -47,7 +47,7 @@ const config = {
 	  guardandoDatos(email,pass)
   });
 
-  btnLogout.addEventListener('click', e => {
+ /* btnLogout.addEventListener('click', e => {
     firebase.auth().signOut();
   });
 
@@ -60,10 +60,10 @@ const config = {
       console.log('no logueado');
       btnLogout.classList.add('hide');
     }
-  });	
+  });	*/
 	/*database*/
 function guardandoDatos(txtEmail,txtPassword) {
-  firebase.database().ref('usuario').set({
+  firebase.database().ref('user').set({
     email: txtEmail,
     pass: txtPassword
   });
