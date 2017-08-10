@@ -11,12 +11,11 @@ nav{
 	width: 100%;
 	margin-top: 50%;
 }
-<<<<<<< HEAD
+
 #logoNav{
 	width: 50%;
 	margin-top: 8%;
-=======
-
+}
 // area de Mireya
 *{
   box-sizing: border-box;
@@ -24,9 +23,7 @@ nav{
   padding: 0;
 }
 
-
 .card {
-
     background-color: #F7F7F7;
     padding: 40px 40px;
     margin: 0 auto 25px;
@@ -41,7 +38,6 @@ nav{
     display: block;
     border-radius: 50%;
 }
-
 .titulo__session {
     font-size: 16px;
     font-weight: bold;
@@ -51,10 +47,8 @@ nav{
 }
 
  button {
-    
     display: block;
     margin: 10px 0 10px 0;
-
     z-index: 1;
     box-sizing: border-box;
 }
@@ -66,8 +60,6 @@ nav{
     margin: 10px 0 10px 0;
 }
 
-
-
 .enlace__contraseñaOlvidada {
     color: rgb(104, 145, 162);
 }
@@ -78,5 +70,4 @@ nav{
 .btn-large, .btn-flat {
     font-size: .8rem;
     outline: 0;
->>>>>>> upstream/master
 }
