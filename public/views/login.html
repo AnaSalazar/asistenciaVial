@@ -10,7 +10,53 @@
   <body>
 	  <section class="container">
       	<h3>Poderosas</h3>
-      </section>
+    </section>
+    <div class="container">
+        <div class="row">
+
+          <div class="col-lg-offset-4 col-lg-5">
+            <div class="card">
+              <img id="profile-img" class="imagen__session" src="assets/img/sesion.png" />
+              <p id="profile-name" class="titulo__session">Iniciar Session</p>
+              <section class="contenedor-general">
+                <div class="row">
+                  <div class="col m4 offset-m2 botones center ">
+                    <a  id="id-google" class="btn-large  red darken-1"><i class="fa fa-google-plus" aria-hidden="true"></i>Login with Google+ </a>
+                  </div>
+                  <div class="col m4 offset-m1 formulario">
+                    <h5>Régistrate</h5>
+                    <div class="input-field">
+                      <input placeholder="username or email" id="username" type="text" class="validate">
+                      <!--<label for="first_name">user/email</label>-->
+                    </div>
+                    <div class="input-field">
+                      <input placeholder="password" id="password" type="password" class="validate">
+                      <!--<label for="first_name">password</label>-->
+                    </div>
+                    <div class="row">
+                      <div class="col m8">
+
+                <button id="botonLogin" class="btn  red" type="submit" name="action">
+                  LOGIN
+                </button>
+                <button id="botonSing" class="btn  red" type="submit" name="action">
+                  Registrarse
+                </button>
+                <button id="botonLogout" class="btn  red hide" type="submit" name="action">
+                  Logout
+                </button>
+              </div>
+            </div>
+
+            <p id="error"></p>
+
+        </div>
+      </div>
+    </section>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <script src="../jquery/dist/jquery.min.js"></script>
     <script src="../materialize-css/dist/js/materialize.min.js"></script>
