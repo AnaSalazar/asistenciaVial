@@ -10,8 +10,7 @@ const config = {
    storageBucket: "mockup-talentfest-greekgirls.appspot.com",
    messagingSenderId: "781047440869"
  };
-
-firebase.initializeApp(config) ;
+ firebase.initializeApp(config);
 
   // Obtener elementos
   const txtEmail = document.getElementById('username');
@@ -19,6 +18,15 @@ firebase.initializeApp(config) ;
   const btnLogin = document.getElementById('botonLogin');
   const btnSignUp = document.getElementById('botonSing');
   const btnLogout = document.getElementById('botonLogout');
+// para llamar a los atributos del obeto
+  const name = document.getElementById("user-name");
+  const img = document.getElementById("user-pic");
+  const correoElectronico= document.getElementById("correo");
+
+
+  //agregado reciente para la base de datos
+  const database= firebase.database();
+
 
   // Añadir Evento login
   btnLogin.addEventListener('click', e => {
@@ -59,4 +67,98 @@ firebase.initializeApp(config) ;
 
     }
   });
+
+  //area de google
+ const btnGoogle = document.getElementById('id-google');
+ btnGoogle.addEventListener( 'click', loginWithGoogle);
+
+ function logIn(provider){
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        var token = result.credential.accessToken;
+        var user = result.user;
+         console.log('user', user);
+        console.log(user.displayName)
+    }).catch(function (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var credential = error.credential;
+
+        console.log('error', error);
+    });
+
+}
+
+
+function loginWithGoogle(provider) {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    logIn(provider);
+}
+
+// para podder acceder mediante google
+function ingresoGoogle(){
+  if(!firebase.auth().currentUser){
+    var provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('https:www.googleapis.com/auth/plus.login');
+    firebase.auth().signInWithPopup(provider).then (function(result){
+      var token = result.credential.accessToken;
+      var user = result.user;
+
+    }).catch(function(error){
+      var errorcode = error.code;
+      var errorMessage = error.message;
+      var erroremail = error.email;
+    })
+  }
+}
+
+
+function InicializarFire(){
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+    //  console.log(user);
+    var displayName= user.displayName;// llamamos las propiedades del objeto
+    var photo= user.photoURL;
+    var email= user.email;
+
+    name.textContent = displayName;
+    correoElectronico.textContent= email;
+    //img.style.backgroundImage = "url('+photo+')";// apara concatenar
+    if(photo){
+      img.style.backgroundImage= "url("+photo+")";
+    }else{
+      img.style.backgroundImage= "url(../assets/img/sesion.png)";
+    }
+
+    userconect=database.ref("/user");
+    AgregarUserBD(user.uid,user.displayName);
+
+
+    //child_added:
+    //child_changed: // es un evento que permite la captura
+  //  child_remove:// evento que permite remover datos
+    //cada vez que utilicemos algunos de los eventos anteriores ,usaremos el metodo on
+    userconect.on('child_added', function(data){
+      console.log("ha ingresado a la sala"+data.val().name);
+    })
+
+    }
+  });
+}
+
+function AgregarUserBD(uid,name){
+  var connectados= userconect.push({
+    uid:uid,
+    name:name
+  });
+}
+
+
+window.onload = function(){
+  InicializarFire();
+
+}
+
+
+
 } ());
