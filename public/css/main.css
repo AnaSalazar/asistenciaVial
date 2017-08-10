@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+@charset "UTF-8";
+=======
 
+>>>>>>> 661dbf998e4ec53a581be919964036206c91a0ba
 .row > .col {
   padding: 0;
   margin: 0; }
@@ -6,16 +10,22 @@
 nav {
   width: 100%;
   background-color: #848484; }
+<<<<<<< HEAD
+=======
 
 @charset "UTF-8";
 body {
   background: -webkit-linear-gradient(left, #58ACFA, #0B3861); }
+>>>>>>> 661dbf998e4ec53a581be919964036206c91a0ba
 
 #logo {
   width: 100%;
   margin-top: 50%; }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 661dbf998e4ec53a581be919964036206c91a0ba
 #logoNav {
   width: 50%;
   margin-top: 8%; }
@@ -67,6 +77,9 @@ button {
 .btn-large, .btn-flat {
   font-size: .8rem;
   outline: 0; }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 661dbf998e4ec53a581be919964036206c91a0ba
 
 /*# sourceMappingURL=main.css.map */
