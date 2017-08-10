@@ -10,7 +10,8 @@ const config = {
    storageBucket: "mockup-talentfest-greekgirls.appspot.com",
    messagingSenderId: "781047440869"
  };
- firebase.initializeApp(config);
+
+firebase.initializeApp(config) ;
 
   // Obtener elementos
   const txtEmail = document.getElementById('username');

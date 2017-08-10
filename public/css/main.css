@@ -33,7 +33,6 @@ body {
   min-height: 1em; }
 
 button {
-  width: 50%;
   display: block;
   margin: 10px 0 10px 0;
   z-index: 1;
@@ -50,5 +49,9 @@ button {
 
 .enlace__contrase:hover {
   color: #0c6121; }
+
+.btn-large, .btn-flat {
+  font-size: .8rem;
+  outline: 0; }
 
 /*# sourceMappingURL=main.css.map */
