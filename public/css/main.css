@@ -74,5 +74,10 @@ button {
   margin-bottom: 0; }
   outline: 0; }
 
+#map {
+  margin-top: 15%;
+  height: 400px;
+  width: 100%;
+}
 
 /*# sourceMappingURL=main.css.map */
