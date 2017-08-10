@@ -41,7 +41,7 @@ body{
 }
 
  button {
-    width: 50%;
+    
     display: block;
     margin: 10px 0 10px 0;
 
@@ -64,4 +64,8 @@ body{
 
 .enlace__contrase:hover{
     color: rgb(12, 97, 33);
+}
+.btn-large, .btn-flat {
+    font-size: .8rem;
+    outline: 0;
 }
