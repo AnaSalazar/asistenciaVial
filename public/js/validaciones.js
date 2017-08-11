@@ -25,16 +25,34 @@ var validacionNombres = function (e){
 		$(this).removeClass('invalid');
 		$(this).addClass('validate');
 	}
-	if(nombre.val().length == "" && apellido.val().length == ""){
+	if(nombre.val().length == ""){
 	  $(this).removeClass('invalid');
 	  $(this).addClass('validate');
-		
+	}
+	if(apellido.val().length == ""){
+	  $(this).removeClass('invalid');
+	  $(this).addClass('validate');	
 	}
 };
 
-var validarVacio = function(nombre,telefono,apellido,placas){
-	if( this == ""){
+var validarVacio = function(){
+	if( apellido.val() == ""){
 		alert("Debes completar todos los campos");
+	}
+	if( nombre.val() == ""){
+		alert("Debes completar todos los campos");
+	}
+	if( telefono.val() == ""){
+		alert("Debes completar todos los campos");
+	}
+	if( placas.val() == ""){
+		alert("Debes completar todos los campos");
+	}
+	else{
+		btnSiguiente.removeClass("disabled");
+        btnSiguiente.click(function(){
+		btnSiguiente.removeClass("disabled");
+						   })
 	}
 }
 
@@ -44,15 +62,16 @@ var validacionCelular = function(){
 		$(this).removeClass('validate');
 		$(this).addClass('invalid');
 	}
-	if(valorTel > 11){
-	  $(this).removeClass('validate');
-		$(this).addClass('invalid');
-		alert("ingresa solo 10 números")
-	}
+	
 	if(valorTel == ""){
 	  $(this).removeClass('invalid');
 	  $(this).addClass('validate');
 		
+	}
+	if(valorTel > 10){
+	  $(this).removeClass('validate');
+		$(this).addClass('invalid');
+		alert("ingresa solo 10 números")
 	}
 	event.returnValue = false;
 	}
@@ -62,21 +81,22 @@ var validacionPlacas = function(){
 	if(placas.val() === ""){	
 	  $(this).removeClass('invalid');
 	  $(this).addClass('validate');
+		btnSiguiente.removeClass("disabled");
 		
 	}
 	 if(this !== Number || this !== String){
 		$(this).addClass('validate');
 		$(this).removeClass('invalid');
+		 btnSiguiente.removeClass("disabled");
 	}
 	
 	if( placas.val().length == 6){
-		btnSiguiente.removeClass("disabled");
+		
 	}
 		}
 
 
-   
-
+ 
 
 
 $(document).ready(function(){
