@@ -18,7 +18,7 @@ const config = {
   const txtPassword = document.getElementById('password');
   const btnLogin = document.getElementById('botonLogin');
   const btnSignUp = document.getElementById('botonSing');
- /* const btnLogout = document.getElementById('botonLogout');*/
+  const btnLogout = document.getElementById('botonLogout');
 // para llamar a los atributos del obeto
   const name = document.getElementById("user-name");
   const img = document.getElementById("user-pic");
@@ -44,13 +44,14 @@ const config = {
 	  /*creamos usuario nuevo*/
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => alert(e.message));
-	  guardandoDatos(email,pass);
+	  guardandoDatos(email,pass)
   });
 
-  /*btnLogout.addEventListener('click', e => {
+ /* btnLogout.addEventListener('click', e => {
     firebase.auth().signOut();
   });
 
+  // Añadir un listener en tiempo real
   firebase.auth().onAuthStateChanged( firebaseUser => {
     if(firebaseUser) {
       console.log(firebaseUser);
@@ -62,7 +63,7 @@ const config = {
   });	*/
 	/*database*/
 function guardandoDatos(txtEmail,txtPassword) {
-  firebase.database().ref('usuario').set({
+  firebase.database().ref('user').set({
     email: txtEmail,
     pass: txtPassword
   });
@@ -116,12 +117,11 @@ function loginWithGoogle(provider) {
 }*/
 
 
-/*
 function InicializarFire(){
   firebase.auth().onAuthStateChanged(function(user){
     if(user){
     //  console.log(user);
-    var displayName= user.displayName;
+    var displayName= user.displayName;// llamamos las propiedades del objeto
     var photo= user.photoURL;
     var email= user.email;
 		
@@ -137,7 +137,6 @@ function InicializarFire(){
 
 window.onload = function(){
   InicializarFire();
-  }
-*/
 
+}
 }());
